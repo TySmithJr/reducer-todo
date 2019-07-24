@@ -1,6 +1,6 @@
 
 
-
+// created a variable to store objects of arrays inside my state
 export const initialState = { 
     todos:[
         {
@@ -21,13 +21,16 @@ export const initialState = {
 ]}
 
 
-
+// created variables for my cases so mispellings won't break my code down the line
 export const ADD_ITEM = "ADD_ITEM"
 export const TOGGLE = "TOGGLE"
 export const REMOVE = "REMOVE"
 
+// created a reducer funtion which holds state & an action , which also is a pure function to do away with side effects
 export const reducer = (state, action) => {
+  // created a switch function to pass in the action.type
     switch (action.type) {
+      // created cases (action.type) to execute lines of code if they are true if will return to default statement
       case ADD_ITEM: 
         const newItem = {item:action.payload, completed:false, id: Date.now()}
         return {...state, todos:[...state.todos,newItem]

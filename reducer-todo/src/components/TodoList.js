@@ -10,6 +10,7 @@ const TodoList = (props) => {
                     <Todos toggle={props.toggle}todo={todo} key={i}/>
                 )
             })}
+            
             <button onClick={props.remove}>Remove</button>
         </div>
     );
